@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>Hii Everyone</h1>
+    <script>
+        isFarthest();
+        function isFarthest(){
+            var cities = ['Hamilton', 'Toronto', 'Vancouver', 'London', 'Brussels', 'Sydney'];
+            /*
+                Hamilton: 334 miles,
+                Toronto: 353 miles,
+                Vancouver: 2,300 miles.
+                London: 3,500 miles,
+                Brussels: 4,500 miles, 
+                Sydney: 9,600 miles, 
+                
+
+                complete code to:- (write single line each)
+                Remove cities to which you cant go
+                Add 'Tokyo' at the end
+                Add 'Boston' at the start (250 miles)
+                Remove furthest city from the array
+                Print the array
+            */
+
+            //Remove cities to which you cant go
+            cities.splice(4);
+
+            //Add 'Tokyo' at the end (10,000 miles);
+            cities.push("Tokyo");
+
+            //Add 'Boston' at the start
+            cities.unshift("Boston");
+
+            //Remove the farthest city from the list (Use splice() method)
+            cities.splice(length - 1);
+
+            //Print the array
+            console.log(cities);
+
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
