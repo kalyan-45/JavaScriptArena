@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+   <script>
+      function CheckRepeatNAdd(first, second){
+        var result = [];
+       for(i=0;i<first.length; i ++)
+       {
+            result.push(first[i]);
+       } 
+
+      for(i=0;i<second.length; i++)
+      {
+            var isElementInsideArray = false;
+            for(j=0; j<result.length; j++)
+            {
+               if(second[i] == result[j])
+               {
+                 isElementInsideArray = true;
+                 break;
+               }        
+            }
+            if(isElementInsideArray == false)
+            {
+                result.push(second[i]);
+            }
+      }
+      return result;
+      }
+
+       var first = ["kalyan", "sumanth", "aniket", "shubham"]
+       var second= ["mahesh", "kalyan", "aniket", "praveen"]
+
+       var result = CheckRepeatNAdd(first, second);
+
+      for(i=0;i<result.length; i++)
+      {
+          console.log(result[i]);
+      }
+    
+   </script> 
+</body>
+</html>
