@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Demo</title>
+</head>
+<body>
+    <button onclick="Add()">Add</button>
+    <button onclick="Print()">Print</button>
+    <script>
+        var stub = 'employee';
+        var empArr = [];
+        var emp = 1;
+        function Add()
+        {
+            
+            return empArr.push(stub + emp++);
+        }
+
+        function Print()
+        {
+            console.log(empArr);
+        }
+    </script>
+</body>
+</html>
