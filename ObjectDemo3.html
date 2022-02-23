@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Create a constructor of family object
+        function family (first, last, age, status) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.maritialStatus = status;
+        }
+
+       
+        var mayDad = new family("Nagnath", "Shete", 45, "Married");
+        var myMom = new family("Shobha", "Shete", 45, "Married");
+        var myBrother = new family("Ashok", "Shete", 28, "Married");
+        var mySister = new family("Pooja", "Sontakke", 25, "Married");
+        var me = new family("Kalyan", "Shete", 22, "Single");
+
+        console.log("My Sweet Family is " + mayDad.firstName, myMom.firstName, myBrother.firstName, mySister.firstName, me.firstName)
+    </script>
+</body>
+</html>
