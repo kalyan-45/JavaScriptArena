@@ -18,7 +18,7 @@
       //Note:- Here you cannot invoke the clouser function, if you invoked then 
       //       clouser breaks down, it is not more. 
 
-        var add = (function(){
+        var add = (function() {
             var counter = 0;
             return function() {
                 counter = counter + 1;
@@ -26,12 +26,12 @@
             }
         })();
         
-        console.log("Access the clouser Immediately after the clouser")
+        console.log("Access the clouser Immediately after the clouser");
         for (var i = 0; i < 5; i++) {
             add();
         }
 
-        console.log("Access the Clouser multiple times in same script tag")
+        console.log("Access the Clouser multiple times in same script tag");
         for (var i = 0; i < 5; i++) {
             add();
         }
@@ -46,7 +46,7 @@
     </script>
 </body>
     <script>
-        console.log("Access Clouser in Body tag")
+        console.log("Access Clouser in Body tag");
         for (var i = 0; i < 5; i++) {
             add();
         }
