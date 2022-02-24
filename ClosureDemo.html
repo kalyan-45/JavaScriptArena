@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello! Welcome.</h1>
+    <!-- Here you cannot access the clouser because clouser defines the after this
+      not before, this mean  sequence is matter in the javaScript-->
+    <script>
+        console.log("Access the Clouser Before the defining the clouser and another script tag");
+        for (var i = 0; i < 5; i++) {
+            add();
+        }
+    </script>    
+    <script>
+       
+      //Note:- Here you cannot invoke the clouser function, if you invoked then 
+      //       clouser breaks down, it is not more. 
+
+        var add = (function(){
+            var counter = 0;
+            return function() {
+                counter = counter + 1;
+                console.log("Employee" + counter);
+            }
+        })();
+        
+        console.log("Access the clouser Immediately after the clouser")
+        for (var i = 0; i < 5; i++) {
+            add();
+        }
+
+        console.log("Access the Clouser multiple times in same script tag")
+        for (var i = 0; i < 5; i++) {
+            add();
+        }
+
+    </script>
+    <script>
+        console.log("Access Clouser in anouther script" +
+                           "tag but not outside the head tag");
+        for (var i = 0; i < 5; i++) {
+            add();
+        }
+    </script>
+</body>
+    <script>
+        console.log("Access Clouser in Body tag")
+        for (var i = 0; i < 5; i++) {
+            add();
+        }
+    </script>
+</html>
