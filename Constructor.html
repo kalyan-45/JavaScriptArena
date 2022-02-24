@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hii.....!!!</h1>    
+    <script>
+        var Book = function(name, author, publishedYear){
+            this.bookName = name;
+            this.authorOfBook = author;
+            this.bookPublishedYear = publishedYear;
+        }
+        var book1 = new Book("Angels and Demons", "Dan Brown", 2014);
+        var book2 = new Book("The Immortals of Meluha", "Amish Tripathi", 2013);
+        
+        console.log(book1.bookName + " by " + book1.authorOfBook + " published in year " + book1.bookPublishedYear);
+        console.log(book2.bookName + " by " + book2.authorOfBook + " published in year " + book2.bookPublishedYear);
+
+    </script>
+</body>
+</html>
