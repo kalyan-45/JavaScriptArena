@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>This Keyword</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+    <button onclick="this.style.color = Green">Submit</button>
+    <script>
+        //Here this refers the window object
+        var car = this;
+        console.log(car);
+
+        //Here also function returns this keyword is refer the window object
+        function f1() {
+            return this;
+        }
+        console.log(f1());
+
+        //here this keyword is refers to the person object attribute.
+        var person = {
+            firstName : "Kalyan",
+            lastName : "Shete",
+            age : 22,
+            getDetails : function() {
+                console.log(this.firstName + this.lastName + this.age);
+            }
+        }
+        person.getDetails();
+
+        //in setTimeout() method accessibility of this keyword
+        var person = {
+            firstName : "Kalyan",
+            lastName : "Shete",
+            getDetails : function() {
+                console.log(this.firstName + " " + this.lastName);
+            }
+        }
+        setTimeout(person.getDetails, 1000);
+        // Here we got a undefined undefined as a output because, the this keyword inside a setTimeout()
+        // method is set to the global object. 
+
+        //Example of NaN
+        var car = {
+            getDetails : function() {
+                console.log(this.carModel + this.carCompany + this.color);
+            }
+        }
+
+        car.getDetails(); //Here this code give us a NaN(Not a Number) as a output
+
+    </script>
+</body>
+</html>
