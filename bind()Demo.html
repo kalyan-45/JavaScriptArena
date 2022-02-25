@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>bind(_)</title>
+</head>
+<body>
+    <script>
+        //Bind example 1
+        var person = {
+            firstName : "Kalyan",
+            lastName : "Shete",
+            AadharID : "9001-0482-1236",
+            fetchDetails : function() {
+                console.log(this.firstName + " " + this.lastName + " " + this.AadharID);
+            }
+        }
+        //here u add a bind method to the current object and refer to owner object
+        var greet = person.fetchDetails.bind(person);
+        setTimeout(greet, 3000);
+
+        //Here Bind example2
+
+        //Suppose, you haven't decalre attribute and u call the undefined attribute in object
+
+        var person = {
+            getDetails : function() {
+                console.log(this.name  + " " + this.address + " " + this.adharId);
+            }
+        }
+
+        //When you call this method and have string then we got a undefined as how many arg have or in number we got NaN as a output.
+        person.getDetails();
+
+        //Now, we try to pass the attribute that is passed in the method using this keyword.
+        var person1 = {
+            name : "Kalyan Shete",
+            address : "per :- Jaiphal, curr :- Pune",
+            adharId : "9001-0482-1236"
+        }
+
+        var person2 = {
+            name : "Prashant Thakur",
+            address : "per :- Ambejogai, curr :- Pune",
+            adharId : "9001-0482-1233"
+        }
+        //Here, we are telling 'this' means person1...so we get a new method with this object
+        var newGetDetailsAsP1 = person.getDetails.bind(person1);
+
+        //Here, we are telling 'this' means person2...so we get a new method with this object
+        var newGetDetailsAsP2 = person.getDetails.bind(person2);
+
+
+        //We are calling that new function as person1 and person2
+        newGetDetailsAsP1();
+        newGetDetailsAsP2();
+    </script>
+</body>
+</html>
