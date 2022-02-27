@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="header">World War 2</h1>
+    <p class="txt1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima voluptatem laborum perferendis labore! Voluptatem corrupti eius cupiditate perferendis magnam, dolor distinctio ipsa minus nam, in quae, laborum inventore odio aliquid.</p>
+    <span>This is span tag</span><br>
+
+    <img src="https://images.unsplash.com/photo-1645902717773-39482e941d45?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="Mypic" id="pic">
+
+    <script>
+        //all Document selector with example...
+        let txt1 = document.getElementById("header").innerHTML;
+        let txt2 = document.getElementsByClassName("txt1")[0].innerHTML;
+        let txt3 = document.getElementsByTagName("span")[0].innerHTML;
+
+        console.log(txt1);
+        console.log(txt2);
+        console.log(txt3);
+
+        document.getElementById("header").innerHTML = "Second World War";
+       // document.getElementById("pic").setAttribute( "height", "20%");
+        document.getElementById("pic").setAttribute( "width", "40%");
+    </script>
+
+    <div id="myDiv">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae sed repellendus temporibus repudiandae quas, culpa id minus optio. Ratione doloribus perspiciatis aliquam iure at temporibus ab laborum repellendus! Voluptatem, ipsam.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo aspernatur quae explicabo magni facere quibusdam provident dolore, possimus neque aut odio eaque quam iste magnam blanditiis tempora doloribus laudantium enim?</p>
+    </div>
+
+
+    </div>
+    
+    <script>
+
+        function addControl() {
+            var myNewInput = document.createElement("input");
+            myNewInput.type = "text";
+            myNewInput.value = "Kalyan Shete";
+
+            var appnedRef = document.getElementById("header");
+            document.body.appendChild(myNewInput);
+        }
+
+    </script>
+
+    <!-- Div for Ukrane want justice -->
+    <br>
+    <button onclick="change()">Change</button>
+    <button onclick="unDo()">UnDo</button>
+    <div id="myDiv2" " style="background-color: pink; border: 1px solid black; height: 300px; width: 500px;">
+
+    </div>
+    <script>
+        function change() {
+            var refForChange = document.getElementById("myDiv2");
+            refForChange.style.backgroundColor = "green";
+        }
+
+        function unDo() {
+            var refForChange = document.getElementById("myDiv2");
+            refForChange.style.backgroundColor = "pink";
+        }
+    </script>
+
+    <button onclick="addControl()">Add</button><br>
+    <script>
+        var myNewInput = document.createElement("input");
+        myNewInput.type = "texr";
+        myNewInput.value = "Name";
+
+        var appnedRef = document.getElementById("header");
+        document.body.appendChild(myNewInput);
+    </script>
+</body>
+</html>
