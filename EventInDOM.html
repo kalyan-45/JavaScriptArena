@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Events</title>
+    <style>
+        #container{
+            height: 300px;
+            width: 250px;
+            background-color: green;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="Add()">Add Employee</button>
+    <div id="container">
+
+    </div>
+    <script>
+        function Add() {
+            var counter = 0;
+            var ref = document.getElementById("container");
+            counter = counter + 1;
+            var content = '<h1>' + "Kalyan" + counter.toString() + '</h1>';
+            ref.innerHTML = ref.innerHTML + content;
+        }
+    </script>
+</body>
+</html>
