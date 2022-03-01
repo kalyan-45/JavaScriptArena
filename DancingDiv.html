@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="DoDance()">Make it Dance</button>
+    <br>
+    <div style="background-color: pink;height: 50px; width: 10px; border: 1px solid black" id="dancingDiv"></div>
+
+   <script>
+       var counter = 10;
+       function DoDance()
+       {
+          
+          window.setInterval(()=>{
+            var refToDancingDiv = document.getElementById("dancingDiv");
+            counter = counter + 10;
+
+            refToDancingDiv.style.width =  counter + "px"; 
+            
+            if(counter > 300)
+            {
+                counter = 10;
+            }
+        }, 500);
+
+       }
+   </script>
+</body>
+</html>
