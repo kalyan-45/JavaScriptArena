@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Promises In JS</title>
+</head>
+<body>
+    <script>
+        //Here did create the promise that have give to the buyer
+        var ShopKeeper = new Promise(Publisher);
+
+        //function of publisher who tells the book is published or not
+        function Publisher(published, notPublished) {
+            let isPublished;
+            let availableBook = 1;
+            if (availableBook >= 1) {
+                isPublished = true;
+            }
+            else {
+                isPublished = false;
+            }
+
+            if(isPublished) {
+                published();
+                
+                //Publisher publish 10 book...!
+            }
+            else {
+                notPublished();
+                //Publisher not publishes the book...!
+            }
+            console.log(resolve);
+        }
+
+        //Below is buyer related code
+        ShopKeeper.then(() => {console.log("Buy Book.... Book is available!!")})
+                  .catch(() => {console.log("Sorry..!! Book is not available.") })
+
+
+    </script>
+</body>
+</html>
