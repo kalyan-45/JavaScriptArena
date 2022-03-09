@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book Search Website</title>
+        
+        <style>
+            body {
+                background-image: url('https://images.pexels.com/photos/2943603/pexels-photo-2943603.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+            }
+            #main-container {
+                position:fixed;
+                left:40%;
+                background-color:yellow;
+                width: 400px;
+            }
+            #booksearch {
+                position: relative;
+                left: 30%;
+            }
+            #btn {
+                position: relative;
+                left: 42%;
+            }
+        </style> 
+            
+       
+    </head>
+    <body>
+        <div id="main-container">
+            <h1 style="text-align: center;">Book Search Application</h1>
+            <input type="text" id="booksearch" placeholder="Enter the title/authors" maxlength="50">
+            <br/><br />
+            <button type="button" id="btn" onclick="searchbook();"> Search </button>
+            <div id="displaysearchedresults" style="text-align: center;"></div>
+        </div>
+        
+
+        <script>
+            var xhr = new XMLHttpRequest();
+
+            function searchbook() {
+                var booksearch = document.getElementById('booksearch').value;
+                var getString = 'https://www.googleapis.com/books/v1/volumes?q=' + booksearch;
+                xhr.open('GET', getString);
+                xhr.send();   
+                xhr.onreadystatechange = function (data){
+                if(xhr.readyState === 4 && xhr.status === 200) {
+                        var data = JSON.parse(xhr.response);
+                        for (i=0; i<data.items.length; i++){
+                                document.getElementById('displaysearchedresults').innerHTML += "<p>" + data.items[i].volumeInfo.title + "<p>"
+                        }    
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
